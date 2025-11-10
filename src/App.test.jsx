@@ -10,7 +10,7 @@ describe('App Component', () => {
       expect(screen.getByText('Polizei Asservatestelle Übungstest')).toBeInTheDocument()
     })
 
-    it('should display all three test options', () => {
+    it('should display all five test options', () => {
       render(<App />)
       expect(screen.getByText('Test A')).toBeInTheDocument()
       expect(screen.getByText('Test B')).toBeInTheDocument()
@@ -19,8 +19,8 @@ describe('App Component', () => {
 
     it('should show 30 questions per test', () => {
       render(<App />)
-      const testButtons = screen.getAllByText(/30 Fragen/)
-      expect(testButtons).toHaveLength(3)
+      const testButtons = screen.getAllByText(/40 Fragen/)
+      expect(testButtons).toHaveLength(5)
     })
   })
 
@@ -31,7 +31,7 @@ describe('App Component', () => {
       fireEvent.click(testAButton)
       
       expect(screen.getByText('Testinformationen')).toBeInTheDocument()
-      expect(screen.getByText(/Anzahl der Fragen: 30/)).toBeInTheDocument()
+      expect(screen.getByText(/Anzahl der Fragen: 40/)).toBeInTheDocument()
     })
 
     it('should start test when start button is clicked', () => {
@@ -46,7 +46,7 @@ describe('App Component', () => {
       fireEvent.click(startButton)
       
       // Should show first question
-      expect(screen.getByText(/Frage 1 von 30/)).toBeInTheDocument()
+      expect(screen.getByText(/Frage 1 von 40/)).toBeInTheDocument()
     })
 
     it('should return to test selection when back button is clicked', () => {
@@ -118,7 +118,7 @@ describe('App Component', () => {
       fireEvent.click(nextButton)
       
       // Should show question 2
-      expect(screen.getByText(/Frage 2 von 30/)).toBeInTheDocument()
+      expect(screen.getByText(/Frage 2 von 40/)).toBeInTheDocument()
     })
   })
 
@@ -144,7 +144,7 @@ describe('App Component', () => {
       
       // Should have 30 indicator dots
       const indicators = document.querySelectorAll('.indicator-dot')
-      expect(indicators).toHaveLength(30)
+      expect(indicators).toHaveLength(40)
     })
   })
 })
