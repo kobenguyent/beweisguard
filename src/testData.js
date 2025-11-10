@@ -458,6 +458,42 @@ export const testData = {
     },
     {
       id: 39,
+      category: 'Deutschkenntnisse',
+      question: 'Wählen Sie den grammatisch korrekten Satz:',
+      options: [
+        'Der Asservat wurde ordnungsgemäß gelagert',
+        'Das Asservat wurde ordnungsgemäß gelagert',
+        'Die Asservat wurde ordnungsgemäß gelagert',
+        'Den Asservat wurde ordnungsgemäß gelagert'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 40,
+      category: 'Deutschkenntnisse',
+      question: 'Was bedeutet "unverzüglich" im behördlichen Kontext?',
+      options: [
+        'Innerhalb einer Woche',
+        'Ohne schuldhaftes Zögern, sofort',
+        'Am nächsten Arbeitstag',
+        'Innerhalb von 24 Stunden'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 41,
+      category: 'Deutschkenntnisse',
+      question: 'Welches Verb passt? "Die Beweismittel müssen sachgerecht _______ werden."',
+      options: [
+        'asservieren',
+        'asserviert',
+        'asservierung',
+        'asservierte'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 42,
       category: 'Recht & Verwaltung',
       question: 'Wann dürfen Asservate zurückgegeben werden?',
       options: [
@@ -469,7 +505,7 @@ export const testData = {
       correctAnswer: 1
     },
     {
-      id: 40,
+      id: 43,
       category: 'Recht & Verwaltung',
       question: 'Welche Berichtspflichten bestehen gegenüber der Staatsanwaltschaft?',
       options: [
@@ -940,6 +976,42 @@ export const testData = {
     },
     {
       id: 39,
+      category: 'Deutschkenntnisse',
+      question: 'Korrigieren Sie den Fehler: "Wegen dem schlechten Wetter wurde die Übergabe verschoben."',
+      options: [
+        'Wegen des schlechten Wetters',
+        'Wegen der schlechten Wetter',
+        'Wegen den schlechten Wetter',
+        'Der Satz ist korrekt'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 40,
+      category: 'Deutschkenntnisse',
+      question: 'Was ist die korrekte Pluralform von "das Protokoll"?',
+      options: [
+        'die Protokolle',
+        'die Protokollen',
+        'die Protokolls',
+        'der Protokolle'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 41,
+      category: 'Deutschkenntnisse',
+      question: 'Lesen Sie: "Die Asservate wurden gemäß § 94 StPO beschlagnahmt." Was bedeutet "gemäß"?',
+      options: [
+        'trotz',
+        'ohne',
+        'entsprechend, nach',
+        'vor'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 42,
       category: 'Protokollierung',
       question: 'Was muss bei der Ausgabe von Asservaten protokolliert werden?',
       options: [
@@ -951,7 +1023,7 @@ export const testData = {
       correctAnswer: 1
     },
     {
-      id: 40,
+      id: 43,
       category: 'Recht & Verwaltung',
       question: 'Wie erfolgt die Vernichtung von Asservaten?',
       options: [
@@ -1422,6 +1494,42 @@ export const testData = {
     },
     {
       id: 39,
+      category: 'Deutschkenntnisse',
+      question: 'Welcher Kasus folgt nach "während"? Beispiel: "während _____ Dienstes"',
+      options: [
+        'dem (Dativ)',
+        'der (Akkusativ)',
+        'des (Genitiv)',
+        'den (Nominativ)'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 40,
+      category: 'Deutschkenntnisse',
+      question: 'Was bedeutet "in Gewahrsam nehmen" im polizeilichen Sprachgebrauch?',
+      options: [
+        'etwas bewachen',
+        'festnehmen oder sicherstellen',
+        'etwas versprechen',
+        'etwas beobachten'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 41,
+      category: 'Deutschkenntnisse',
+      question: 'Ergänzen Sie den Satz korrekt: "Der Beamte hat das Asservat _____ Labor gebracht."',
+      options: [
+        'zum',
+        'zu dem',
+        'ins',
+        'in das'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 42,
       category: 'Recht & Verwaltung',
       question: 'Welche Auswirkung hat eine fehlerhafte Asservatenverwaltung auf ein Verfahren?',
       options: [
@@ -1433,7 +1541,7 @@ export const testData = {
       correctAnswer: 1
     },
     {
-      id: 40,
+      id: 43,
       category: 'Recht & Verwaltung',
       question: 'Wer entscheidet über die Einziehung von Asservaten?',
       options: [
@@ -1904,6 +2012,42 @@ export const testData = {
     },
     {
       id: 39,
+      category: 'Deutschkenntnisse',
+      question: 'Welche Präposition ist korrekt? "Die Akte liegt _____ Schreibtisch."',
+      options: [
+        'auf dem',
+        'auf den',
+        'auf der',
+        'in den'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 40,
+      category: 'Deutschkenntnisse',
+      question: 'Was ist das Gegenteil von "beschlagnahmen"?',
+      options: [
+        'vernichten',
+        'freigeben',
+        'lagern',
+        'dokumentieren'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 41,
+      category: 'Deutschkenntnisse',
+      question: 'Vervollständigen Sie: "Der Verdächtige wurde _____ Tatort festgenommen." (am/an dem)',
+      options: [
+        'am',
+        'an',
+        'im',
+        'in'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 42,
       category: 'Protokollierung',
       question: 'Was muss ein Anforderungsschein für Asservate enthalten?',
       options: [
@@ -1915,7 +2059,7 @@ export const testData = {
       correctAnswer: 1
     },
     {
-      id: 40,
+      id: 43,
       category: 'Recht & Verwaltung',
       question: 'Welche Verschwiegenheitspflicht gilt für Mitarbeiter der Asservatestelle?',
       options: [
@@ -2386,6 +2530,42 @@ export const testData = {
     },
     {
       id: 39,
+      category: 'Deutschkenntnisse',
+      question: 'Wählen Sie die korrekte Form: "Ich _____ das Formular bereits ausgefüllt."',
+      options: [
+        'habe',
+        'bin',
+        'hatte',
+        'werde'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 40,
+      category: 'Deutschkenntnisse',
+      question: 'Was bedeutet "zwecks" in einem offiziellen Schreiben?',
+      options: [
+        'ohne',
+        'statt',
+        'zum Zweck von, für',
+        'trotz'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 41,
+      category: 'Deutschkenntnisse',
+      question: 'Finden Sie den Fehler: "Der Zeuge sagt aus, dass er nichts gesehen hat."',
+      options: [
+        'Zeuge → Zeugin',
+        'sagt aus → aussagt',
+        'hat → hätte',
+        'Kein Fehler, der Satz ist korrekt'
+      ],
+      correctAnswer: 3
+    },
+    {
+      id: 42,
       category: 'Protokollierung',
       question: 'Welche Rolle spielen digitale Dokumentationssysteme?',
       options: [
@@ -2397,7 +2577,7 @@ export const testData = {
       correctAnswer: 1
     },
     {
-      id: 40,
+      id: 43,
       category: 'Recht & Verwaltung',
       question: 'Welche Rolle spielen Verwaltungsvorschriften?',
       options: [

@@ -8,9 +8,9 @@ describe('testData', () => {
       expect(Object.keys(testData)).toEqual(['Test A', 'Test B', 'Test C', 'Test D', 'Test E'])
     })
 
-    it('should have 40 questions per test', () => {
+    it('should have 43 questions per test', () => {
       Object.entries(testData).forEach(([testName, questions]) => {
-        expect(questions).toHaveLength(40)
+        expect(questions).toHaveLength(43)
       })
     })
   })
@@ -80,7 +80,8 @@ describe('testData', () => {
       'Mathematik',
       'Logik',
       'Logistik',
-      'Kontextfrage'
+      'Kontextfrage',
+      'Deutschkenntnisse'
     ]
 
     mainCategories.forEach(category => {
@@ -161,7 +162,7 @@ describe('testData', () => {
       'raumklima', 'beweiskraft', 'notfallmaßnahmen', 'übergabe', 'probenteilung',
       'wertermittlung', 'entsorgung', 'datensicherung', 'textilien', 'zugriffsrechte',
       'versicherung', 'spurenträger', 'altlasten', 'siegelbruch', 'fundunterschlagung',
-      'gefahrstoffe'
+      'gefahrstoffe', 'deutschkenntnisse'
     ]
 
 

@@ -19,7 +19,7 @@ describe('App Component', () => {
 
     it('should show 30 questions per test', () => {
       render(<App />)
-      const testButtons = screen.getAllByText(/40 Fragen/)
+      const testButtons = screen.getAllByText(/43 Fragen/)
       expect(testButtons).toHaveLength(5)
     })
   })
@@ -31,7 +31,7 @@ describe('App Component', () => {
       fireEvent.click(testAButton)
       
       expect(screen.getByText('Testinformationen')).toBeInTheDocument()
-      expect(screen.getByText(/Anzahl der Fragen: 40/)).toBeInTheDocument()
+      expect(screen.getByText(/Anzahl der Fragen: 43/)).toBeInTheDocument()
     })
 
     it('should start test when start button is clicked', () => {
@@ -46,7 +46,7 @@ describe('App Component', () => {
       fireEvent.click(startButton)
       
       // Should show first question
-      expect(screen.getByText(/Frage 1 von 40/)).toBeInTheDocument()
+      expect(screen.getByText(/Frage 1 von 43/)).toBeInTheDocument()
     })
 
     it('should return to test selection when back button is clicked', () => {
@@ -118,7 +118,7 @@ describe('App Component', () => {
       fireEvent.click(nextButton)
       
       // Should show question 2
-      expect(screen.getByText(/Frage 2 von 40/)).toBeInTheDocument()
+      expect(screen.getByText(/Frage 2 von 43/)).toBeInTheDocument()
     })
   })
 
@@ -144,7 +144,7 @@ describe('App Component', () => {
       
       // Should have 30 indicator dots
       const indicators = document.querySelectorAll('.indicator-dot')
-      expect(indicators).toHaveLength(40)
+      expect(indicators).toHaveLength(43)
     })
   })
 })
