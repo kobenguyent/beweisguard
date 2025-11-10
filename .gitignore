@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Test coverage
+coverage
+.nyc_output
+
+# Test reports
+test-results
+playwright-report
+html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

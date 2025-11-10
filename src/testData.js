@@ -239,6 +239,126 @@ export const testData = {
         'Keine Dokumentation nötig'
       ],
       correctAnswer: 1
+    },
+    {
+      id: 21,
+      category: 'Mathematik',
+      question: 'Eine Asservatestelle hat 240 Asservate. 15% davon sind Betäubungsmittel, 25% sind Waffen und der Rest sind sonstige Gegenstände. Wie viele sonstige Gegenstände sind es?',
+      options: [
+        '120 Gegenstände',
+        '144 Gegenstände',
+        '96 Gegenstände',
+        '180 Gegenstände'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 22,
+      category: 'Mathematik',
+      question: 'In einem Monat wurden 180 neue Asservate aufgenommen und 45 zurückgegeben. Wenn zu Beginn des Monats 320 Asservate vorhanden waren, wie viele sind es am Ende?',
+      options: [
+        '455 Asservate',
+        '500 Asservate',
+        '365 Asservate',
+        '410 Asservate'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 23,
+      category: 'Logistik',
+      question: 'Bei einer Überprüfung stellt sich heraus, dass die Asservatestelle zu 85% ausgelastet ist. Die maximale Kapazität beträgt 800 Asservate. Welche Maßnahme ist am sinnvollsten?',
+      options: [
+        'Sofort neue Räume anmieten',
+        'Planung für Kapazitätserweiterung beginnen',
+        'Asservate vorzeitig vernichten',
+        'Keine Maßnahme erforderlich'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 24,
+      category: 'Logistik',
+      question: 'Drei Dienststellen müssen Asservate zur zentralen Stelle transportieren. Dienststelle A hat 15 Asservate, B hat 23 und C hat 12. Welche Transportroute ist logistisch optimal?',
+      options: [
+        'Jede Dienststelle einzeln abholen',
+        'Route: A → B → C → Zentrale',
+        'Alle Dienststellen gleichzeitig beauftragen',
+        'Nur die beiden größten abholen'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 25,
+      category: 'Kontextfrage',
+      question: 'Ein beschlagnahmtes Smartphone wurde als Asservat aufgenommen. Der Akku ist fast leer. Was sollte priorisiert werden?',
+      options: [
+        'Sofort aufladen und einschalten',
+        'Akku entfernen und getrennt lagern',
+        'In Flugmodus versetzen und dokumentieren',
+        'Ausgeschaltet lassen und forensisch sichern'
+      ],
+      correctAnswer: 3
+    },
+    {
+      id: 26,
+      category: 'Kontextfrage',
+      question: 'Bei einem Verkehrsunfall werden Bremsflüssigkeitsproben sichergestellt. Diese müssen innerhalb von 48 Stunden analysiert werden. Was ist die richtige Vorgehensweise?',
+      options: [
+        'Normal im Regal lagern',
+        'Sofortige Weitergabe ans Labor mit Prioritätsvermerk',
+        'Einfrieren bis zur Analyse',
+        'Warten bis genug Proben für eine Sammelanalyse vorliegen'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 27,
+      category: 'Logik',
+      question: 'Wenn alle Betäubungsmittel-Asservate besonders gesichert werden müssen, und einige besonders gesicherte Asservate im Tresor sind, was folgt daraus?',
+      options: [
+        'Alle Betäubungsmittel sind im Tresor',
+        'Einige Betäubungsmittel könnten im Tresor sein',
+        'Keine Betäubungsmittel sind im Tresor',
+        'Alle Tresor-Asservate sind Betäubungsmittel'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 28,
+      category: 'Logik',
+      question: 'Asservat X muss vor Asservat Y aufgenommen werden. Y muss vor Z aufgenommen werden. Welche Reihenfolge ist korrekt?',
+      options: [
+        'Z, Y, X',
+        'Y, X, Z',
+        'X, Y, Z',
+        'X, Z, Y'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 29,
+      category: 'Kontextfrage',
+      question: 'Ein Zeuge bringt ein gefundenes Messer zur Dienststelle, das möglicherweise bei einer Straftat verwendet wurde. Wie sollten Sie vorgehen?',
+      options: [
+        'Messer direkt anfassen und untersuchen',
+        'Mit Handschuhen aufnehmen, Zeugendaten erfassen, asservieren',
+        'Zeuge soll es in eine Tüte legen',
+        'Foto machen und zurückgeben'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 30,
+      category: 'Mathematik',
+      question: 'Die durchschnittliche Lagerdauer von Asservaten beträgt 18 Monate. Bei 60 Asservaten sind bereits 12 Monate vergangen. Wie viele Monate Lagerung sind im Durchschnitt noch zu erwarten?',
+      options: [
+        '6 Monate',
+        '12 Monate',
+        '18 Monate',
+        '30 Monate'
+      ],
+      correctAnswer: 0
     }
   ],
   'Test B': [
@@ -481,6 +601,126 @@ export const testData = {
         'Nur Feuerwehrnummer'
       ],
       correctAnswer: 1
+    },
+    {
+      id: 21,
+      category: 'Mathematik',
+      question: 'Ein Tresor fasst maximal 120kg. Aktuell lagern dort Asservate mit einem Gesamtgewicht von 78kg. Wie viel Prozent der Kapazität ist noch frei?',
+      options: [
+        '35%',
+        '42%',
+        '65%',
+        '58%'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 22,
+      category: 'Logik',
+      question: 'Wenn ein Asservat weder biologische Spuren noch elektronische Daten enthält, aber gekühlt gelagert werden muss, um welche Art handelt es sich am wahrscheinlichsten?',
+      options: [
+        'Dokumente',
+        'Waffen',
+        'Lebensmittel oder Chemikalien',
+        'Bargeld'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 23,
+      category: 'Kontextfrage',
+      question: 'Bei einer Hausdurchsuchung werden 50 identische Datenträger gefunden. Wie sollte die Asservierung erfolgen?',
+      options: [
+        'Alle zusammen in einen Karton',
+        'Jeder einzeln nummeriert und dokumentiert',
+        'Nur 10 exemplarisch asservieren',
+        'Nur verdächtige asservieren'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 24,
+      category: 'Logistik',
+      question: 'Die Asservatestelle muss umorganisiert werden. 30% der Fläche ist für Hochsicherheitsbereich vorgesehen. Bei 200m² Gesamtfläche, wie viel bleibt für normale Asservate?',
+      options: [
+        '140m²',
+        '170m²',
+        '130m²',
+        '160m²'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 25,
+      category: 'Mathematik',
+      question: 'In einem Quartal wurden 450 Asservate aufgenommen. Im ersten Monat 180, im zweiten 150. Wie viele waren es im dritten Monat?',
+      options: [
+        '100',
+        '120',
+        '130',
+        '140'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 26,
+      category: 'Logik',
+      question: 'Aussage 1: Alle Waffen müssen entladen sein. Aussage 2: Dieses Asservat ist eine Waffe. Was folgt daraus logisch?',
+      options: [
+        'Dieses Asservat könnte geladen sein',
+        'Dieses Asservat muss entladen sein',
+        'Dieses Asservat ist gefährlich',
+        'Keine sichere Aussage möglich'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 27,
+      category: 'Kontextfrage',
+      question: 'Ein Kollege meldet sich krank. Sie müssen kurzfristig die Asservatenstelle übernehmen. Was ist Ihre erste Handlung?',
+      options: [
+        'Inventur durchführen',
+        'Übergabeprotokoll prüfen und offene Vorgänge checken',
+        'Neue Asservate sortieren',
+        'Räume reinigen'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 28,
+      category: 'Logistik',
+      question: 'Für den Transport von 25 Asservaten stehen 3 Fahrzeuge zur Verfügung: Fahrzeug A (8 Asservate), B (12 Asservate), C (10 Asservate). Wie sollte verteilt werden?',
+      options: [
+        'A=8, B=12, C=5',
+        'A=8, B=10, C=7',
+        'A=5, B=10, C=10',
+        'A=8, B=9, C=8'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 29,
+      category: 'Kontextfrage',
+      question: 'Ein Staatsanwalt fordert telefonisch die sofortige Herausgabe eines Asservats. Was tun Sie?',
+      options: [
+        'Sofort herausgeben',
+        'Schriftlichen Antrag mit Aktenzeichen anfordern',
+        'Ablehnen',
+        'Vorgesetzten fragen'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 30,
+      category: 'Logik',
+      question: 'Wenn Asservat A älter ist als B, und B älter ist als C, welches wurde zuerst aufgenommen?',
+      options: [
+        'Asservat C',
+        'Asservat B',
+        'Asservat A',
+        'Nicht bestimmbar'
+      ],
+      correctAnswer: 2
     }
   ],
   'Test C': [
@@ -721,6 +961,126 @@ export const testData = {
         'Staatsanwaltschaft, Gerichte, Kriminaltechnik, andere Behörden',
         'Nur mit Gerichten',
         'Keine Zusammenarbeit nötig'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 21,
+      category: 'Mathematik',
+      question: 'Von 300 Asservaten wurden 20% vernichtet und 15% zurückgegeben. Wie viele Asservate verbleiben?',
+      options: [
+        '195 Asservate',
+        '210 Asservate',
+        '180 Asservate',
+        '165 Asservate'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 22,
+      category: 'Logik',
+      question: 'Wenn jedes Betäubungsmittel-Asservat eine BtM-Nummer hat, und Asservat X keine BtM-Nummer hat, was gilt?',
+      options: [
+        'X ist ein Betäubungsmittel',
+        'X ist kein Betäubungsmittel',
+        'X könnte ein Betäubungsmittel sein',
+        'Keine Aussage möglich'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 23,
+      category: 'Kontextfrage',
+      question: 'Ein Asservat riecht stark nach Chemikalien und der Behälter ist undicht. Wie reagieren Sie?',
+      options: [
+        'Normal weiter bearbeiten',
+        'Raum evakuieren, Fachpersonal informieren, dokumentieren',
+        'Fenster öffnen und weiterarbeiten',
+        'Asservat sofort entsorgen'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 24,
+      category: 'Logistik',
+      question: 'Sie müssen 80 Asservate auf 4 gleich große Regale verteilen. Jedes Regal hat 25 Fächer. Ist genug Platz?',
+      options: [
+        'Ja, 20 Fächer bleiben frei',
+        'Nein, 20 Asservate haben keinen Platz',
+        'Genau passend',
+        'Ja, 10 Fächer bleiben frei'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 25,
+      category: 'Mathematik',
+      question: 'Die Kosten für die Asservatenverwaltung betragen 45.000€ jährlich. Bei 1.800 Asservaten, wie hoch sind die Kosten pro Asservat?',
+      options: [
+        '20€',
+        '25€',
+        '30€',
+        '35€'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 26,
+      category: 'Logik',
+      question: 'Prämisse 1: Digitale Asservate benötigen besondere IT-Kenntnisse. Prämisse 2: Mitarbeiter ohne IT-Kenntnisse arbeiten hier. Was folgt?',
+      options: [
+        'Es gibt keine digitalen Asservate',
+        'Nicht alle können digitale Asservate bearbeiten',
+        'Alle haben IT-Kenntnisse',
+        'Digitale Asservate sind verboten'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 27,
+      category: 'Kontextfrage',
+      question: 'Bei einer Kontrolle finden Sie ein Asservat ohne Kennzeichnung. Was ist die korrekte Vorgehensweise?',
+      options: [
+        'Asservat entsorgen',
+        'Beliebige Nummer vergeben',
+        'Vorfall dokumentieren, Recherche durchführen, ggf. nachkennzeichnen',
+        'Ignorieren'
+      ],
+      correctAnswer: 2
+    },
+    {
+      id: 28,
+      category: 'Logistik',
+      question: 'Drei Transportfahrzeuge bringen Asservate: Fahrzeug 1 um 9:00 Uhr, Fahrzeug 2 um 10:30 Uhr, Fahrzeug 3 um 14:00 Uhr. Sie haben eine Pause von 12:00-13:00 Uhr. Wie planen Sie?',
+      options: [
+        'Fahrzeug 1 und 2 vor der Pause, 3 danach',
+        'Alle vor der Pause',
+        'Alle nach der Pause',
+        'Pause verschieben'
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 29,
+      category: 'Kontextfrage',
+      question: 'Ein Journalist fragt nach Details zu einem prominenten Fall. Das Asservat liegt in Ihrer Stelle. Wie verhalten Sie sich?',
+      options: [
+        'Auskunft geben',
+        'Keine Auskunft, Verweis auf Pressestelle',
+        'Foto vom Asservat machen',
+        'Allgemeine Infos geben'
+      ],
+      correctAnswer: 1
+    },
+    {
+      id: 30,
+      category: 'Logik',
+      question: 'Wenn alle korrekt etikettierten Asservate im System sind, und Asservat Y nicht im System ist, was gilt?',
+      options: [
+        'Y ist korrekt etikettiert',
+        'Y ist nicht korrekt etikettiert',
+        'Y existiert nicht',
+        'Y ist im System'
       ],
       correctAnswer: 1
     }
