@@ -60,7 +60,7 @@ test.describe('BeweisGuard E2E Tests', () => {
       await page.getByRole('button', { name: /Weiter/ }).click();
     }
     
-    // Jump to last question using direct URL manipulation
+    // Jump to last question using indicator dots
     await page.evaluate(() => {
       const questions = document.querySelectorAll('.indicator-dot');
       if (questions.length > 0) {
@@ -68,8 +68,8 @@ test.describe('BeweisGuard E2E Tests', () => {
       }
     });
     
-    // Wait for last question to load
-    await page.waitForTimeout(500);
+    // Wait for the submit button to appear (last question)
+    await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
     
     // Answer last question
     await page.getByRole('button', { name: /A / }).first().click();
@@ -96,7 +96,9 @@ test.describe('BeweisGuard E2E Tests', () => {
       const dots = document.querySelectorAll('.indicator-dot');
       dots[dots.length - 1]?.click();
     });
-    await page.waitForTimeout(500);
+    
+    // Wait for the submit button to appear
+    await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
     
     // Submit
     await page.getByRole('button', { name: /Test abschließen/ }).click();
