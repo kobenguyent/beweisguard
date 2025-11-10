@@ -195,6 +195,28 @@
   margin-bottom: 30px;
 }
 
+.question-category {
+  margin-bottom: 15px;
+}
+
+.category-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-badge.small {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+}
+
 .question-text {
   color: #333;
   font-size: 1.4rem;
@@ -410,36 +432,173 @@
 }
 
 @media (max-width: 768px) {
+  #root {
+    padding: 10px;
+  }
+
   .container {
     padding: 20px;
+    border-radius: 15px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 1rem;
   }
 
   .test-selection {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
-  .question-text {
+  .test-button {
+    padding: 25px;
     font-size: 1.2rem;
   }
 
-  .option-button {
+  .test-intro {
+    padding: 20px;
+  }
+
+  .test-intro h3 {
+    font-size: 1.1rem;
+  }
+
+  .test-intro p {
     font-size: 1rem;
-    padding: 15px;
+  }
+
+  .test-name {
+    font-size: 1.5rem;
+  }
+
+  .question-card {
+    padding: 20px;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .category-badge {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .option-button {
+    font-size: 0.95rem;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .option-letter {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    min-width: 120px;
   }
 
   .button-group {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .button {
+    width: 100%;
   }
 
   .navigation {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .navigation .button {
+    width: 100%;
+  }
+
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .indicator-dot.current {
+    width: 14px;
+    height: 14px;
+  }
+
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .score-percentage {
+    font-size: 2.5rem;
+  }
+
+  .results h2 {
+    font-size: 1.5rem;
+  }
+
+  .score-details {
+    font-size: 1.1rem;
+  }
+
+  .review-item {
+    padding: 15px;
+  }
+
+  .review-question {
+    font-size: 1rem;
+  }
+
+  .review-answers {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .test-button {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .option-button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .option-letter {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
   }
 }

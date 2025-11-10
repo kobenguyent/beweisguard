@@ -163,6 +163,9 @@ function App() {
                     <span className="review-number">Frage {index + 1}</span>
                     <span className="review-icon">{isCorrect ? '✅' : '❌'}</span>
                   </div>
+                  {question.category && (
+                    <span className="category-badge small">{question.category}</span>
+                  )}
                   <p className="review-question">{question.question}</p>
                   <div className="review-answers">
                     {userAnswer !== undefined && (
@@ -217,6 +220,11 @@ function App() {
         </div>
 
         <div className="question-card">
+          {currentQuestion.category && (
+            <div className="question-category">
+              <span className="category-badge">{currentQuestion.category}</span>
+            </div>
+          )}
           <h2 className="question-text">{currentQuestion.question}</h2>
           
           <div className="options">
