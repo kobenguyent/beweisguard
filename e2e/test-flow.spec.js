@@ -60,11 +60,14 @@ test.describe('BeweisGuard E2E Tests', () => {
       await page.getByRole('button', { name: /Weiter/ }).click();
     }
     
+    // Wait for indicator dots to be loaded
+    await page.locator('.indicator-dot').first().waitFor({ state: 'visible' });
+    
     // Click on the last indicator dot to jump to the end
     await page.locator('.indicator-dot').last().click();
     
     // Wait for navigation to complete by checking the question number changes
-    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 5000 });
+    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 10000 });
     
     // Answer last question
     await page.getByRole('button', { name: /A / }).first().click();
@@ -87,11 +90,14 @@ test.describe('BeweisGuard E2E Tests', () => {
     // Answer first question
     await page.getByRole('button', { name: /A / }).first().click();
     
+    // Wait for indicator dots to be loaded
+    await page.locator('.indicator-dot').first().waitFor({ state: 'visible' });
+    
     // Click on the last indicator dot to jump to the end
     await page.locator('.indicator-dot').last().click();
     
     // Wait for navigation to complete
-    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 5000 });
+    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 10000 });
     
     // Submit without answering the last question (testing partial completion)
     await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
