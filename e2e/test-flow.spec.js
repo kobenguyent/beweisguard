@@ -54,27 +54,23 @@ test.describe('BeweisGuard E2E Tests', () => {
     await page.getByRole('button', { name: /Test A/ }).click();
     await page.getByRole('button', { name: /Test starten/ }).click();
     
-    // Answer a few questions quickly
+    // Answer first few questions
     for (let i = 0; i < 3; i++) {
       await page.getByRole('button', { name: /A / }).first().click();
       await page.getByRole('button', { name: /Weiter/ }).click();
     }
     
-    // Jump to last question using indicator dots
-    await page.evaluate(() => {
-      const questions = document.querySelectorAll('.indicator-dot');
-      if (questions.length > 0) {
-        questions[questions.length - 1].click();
-      }
-    });
+    // Click on the last indicator dot to jump to the end
+    await page.locator('.indicator-dot').last().click();
     
-    // Wait for the submit button to appear (last question)
-    await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
+    // Wait for navigation to complete by checking the question number changes
+    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 5000 });
     
     // Answer last question
     await page.getByRole('button', { name: /A / }).first().click();
     
-    // Submit test
+    // Submit test - should now be visible
+    await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
     await page.getByRole('button', { name: /Test abschließen/ }).click();
     
     // Verify results page
@@ -91,16 +87,14 @@ test.describe('BeweisGuard E2E Tests', () => {
     // Answer first question
     await page.getByRole('button', { name: /A / }).first().click();
     
-    // Jump to end using indicator dots
-    await page.evaluate(() => {
-      const dots = document.querySelectorAll('.indicator-dot');
-      dots[dots.length - 1]?.click();
-    });
+    // Click on the last indicator dot to jump to the end
+    await page.locator('.indicator-dot').last().click();
     
-    // Wait for the submit button to appear
+    // Wait for navigation to complete
+    await expect(page.getByText(/Frage 43 von 43/)).toBeVisible({ timeout: 5000 });
+    
+    // Submit without answering the last question (testing partial completion)
     await expect(page.getByRole('button', { name: /Test abschließen/ })).toBeVisible();
-    
-    // Submit
     await page.getByRole('button', { name: /Test abschließen/ }).click();
     
     // Check results and retry
