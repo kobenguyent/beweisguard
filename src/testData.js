@@ -291,14 +291,15 @@ export const testData = {
     {
       id: 25,
       category: 'Kontextfrage',
-      question: 'Ein beschlagnahmtes Smartphone wurde als Asservat aufgenommen. Der Akku ist fast leer. Was sollte priorisiert werden?',
-      options: [
-        'Sofort aufladen und einschalten',
-        'Akku entfernen und getrennt lagern',
-        'In Flugmodus versetzen und dokumentieren',
-        'Ausgeschaltet lassen und forensisch sichern'
+      type: 'context',
+      question: 'Beschreiben Sie die wichtigsten Schritte bei der Annahme eines neuen Asservats in die Asservatestelle.',
+      keywords: [
+        'dokumentation', 'datum', 'uhrzeit', 'beschreibung', 'fundort',
+        'kennzeichnung', 'nummer', 'verpackung', 'versiegelung',
+        'fotografieren', 'zustand', 'protokoll', 'unterschrift'
       ],
-      correctAnswer: 3
+      suggestedAnswer: 'Bei der Annahme eines Asservats müssen folgende Schritte durchgeführt werden: 1) Vollständige Dokumentation mit Datum, Uhrzeit, Beschreibung und Fundort. 2) Zustandsbeschreibung und fotografische Dokumentation. 3) Eindeutige Kennzeichnung mit Asservatennummer. 4) Sachgerechte Verpackung und Versiegelung. 5) Eintrag ins Asservatenverzeichnis. 6) Unterschrift des annehmenden Beamten.',
+      minKeywords: 5
     },
     {
       id: 26,
@@ -339,14 +340,15 @@ export const testData = {
     {
       id: 29,
       category: 'Kontextfrage',
-      question: 'Ein Zeuge bringt ein gefundenes Messer zur Dienststelle, das möglicherweise bei einer Straftat verwendet wurde. Wie sollten Sie vorgehen?',
-      options: [
-        'Messer direkt anfassen und untersuchen',
-        'Mit Handschuhen aufnehmen, Zeugendaten erfassen, asservieren',
-        'Zeuge soll es in eine Tüte legen',
-        'Foto machen und zurückgeben'
+      type: 'context',
+      question: 'Ein Kollege bittet Sie, ein Asservat für einen laufenden Fall herauszugeben. Was müssen Sie prüfen und dokumentieren?',
+      keywords: [
+        'berechtigung', 'autorisiert', 'aktenzeichen', 'unterschrift',
+        'dokumentation', 'protokoll', 'ausgabe', 'quittung',
+        'datum', 'uhrzeit', 'zweck', 'rückgabe'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Folgende Punkte sind zu beachten: 1) Berechtigung des Kollegen prüfen (ist er für den Fall zuständig?). 2) Aktenzeichen und Fallbezug überprüfen. 3) Schriftliche Ausgabequittung mit Datum, Uhrzeit, Empfänger und Zweck. 4) Unterschrift des Empfängers. 5) Geplantes Rückgabedatum festhalten. 6) Eintrag in die Asservatenkette/Chain of Custody.',
+      minKeywords: 4
     },
     {
       id: 30,
@@ -785,14 +787,15 @@ export const testData = {
     {
       id: 23,
       category: 'Kontextfrage',
-      question: 'Bei einer Hausdurchsuchung werden 50 identische Datenträger gefunden. Wie sollte die Asservierung erfolgen?',
-      options: [
-        'Alle zusammen in einen Karton',
-        'Jeder einzeln nummeriert und dokumentiert',
-        'Nur 10 exemplarisch asservieren',
-        'Nur verdächtige asservieren'
+      type: 'context',
+      question: 'Erklären Sie, welche Sicherheitsmaßnahmen bei der Lagerung von Betäubungsmitteln als Asservate einzuhalten sind.',
+      keywords: [
+        'btmg', 'betäubungsmittelgesetz', 'tresor', 'gesichert', 'verschlossen',
+        'zugang', 'zugriff', 'kontrolle', 'dokumentation', 'protokoll',
+        'vier-augen', 'doppelt', 'schlüssel', 'alarm'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Betäubungsmittel als Asservate müssen nach dem Betäubungsmittelgesetz (BtMG) besonders gesichert werden: 1) Lagerung in einem doppelt gesicherten Tresor oder Stahlschrank. 2) Streng kontrollierter Zugang nur für autorisiertes Personal. 3) Vier-Augen-Prinzip bei Zugriff. 4) Lückenlose Dokumentation aller Zugriffe mit Datum, Uhrzeit und Unterschrift. 5) Regelmäßige Bestandskontrollen. 6) Alarmgesicherte Räume.',
+      minKeywords: 5
     },
     {
       id: 24,
@@ -833,14 +836,15 @@ export const testData = {
     {
       id: 27,
       category: 'Kontextfrage',
-      question: 'Ein Kollege meldet sich krank. Sie müssen kurzfristig die Asservatenstelle übernehmen. Was ist Ihre erste Handlung?',
-      options: [
-        'Inventur durchführen',
-        'Übergabeprotokoll prüfen und offene Vorgänge checken',
-        'Neue Asservate sortieren',
-        'Räume reinigen'
+      type: 'context',
+      question: 'Beschreiben Sie, wie Sie vorgehen, wenn Sie einen Siegelbruch an einem Asservat entdecken.',
+      keywords: [
+        'dokumentation', 'protokoll', 'fotografieren', 'meldung', 'vorgesetzter',
+        'staatsanwaltschaft', 'ursache', 'ermittlung', 'zustand', 'beschreibung',
+        'datum', 'uhrzeit', 'chain of custody', 'nachvollziehbarkeit'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Vorgehensweise bei Siegelbruch: 1) Asservat nicht weiter berühren oder bewegen. 2) Sofortige fotografische Dokumentation des Ist-Zustands. 3) Detailliertes Protokoll mit Datum, Uhrzeit und Entdeckungsumständen. 4) Unverzügliche Meldung an Vorgesetzte. 5) Information an Staatsanwaltschaft bei relevanten Verfahren. 6) Ermittlung der möglichen Ursache. 7) Lückenlose Aktualisierung der Chain of Custody.',
+      minKeywords: 5
     },
     {
       id: 28,
@@ -1303,14 +1307,15 @@ export const testData = {
     {
       id: 23,
       category: 'Kontextfrage',
-      question: 'Ein Asservat riecht stark nach Chemikalien und der Behälter ist undicht. Wie reagieren Sie?',
-      options: [
-        'Normal weiter bearbeiten',
-        'Raum evakuieren, Fachpersonal informieren, dokumentieren',
-        'Fenster öffnen und weiterarbeiten',
-        'Asservat sofort entsorgen'
+      type: 'context',
+      question: 'Erklären Sie die wichtigsten Aspekte der Chain of Custody (Asservatenkette) und warum sie für die Beweiskraft wichtig ist.',
+      keywords: [
+        'chain of custody', 'asservatenkette', 'dokumentation', 'lückenlos',
+        'zugriff', 'übergabe', 'transport', 'nachvollziehbar',
+        'beweiskraft', 'gericht', 'integrität', 'manipulationsschutz'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Die Chain of Custody ist die lückenlose Dokumentation aller Zugriffe, Transfers und Standorte eines Asservats: 1) Jeder Zugriff wird mit Person, Datum, Uhrzeit und Zweck dokumentiert. 2) Bei Übergaben erfolgt eine Quittierung durch beide Parteien. 3) Transportwege werden vollständig protokolliert. 4) Dies sichert die Beweiskraft vor Gericht, da Manipulationen ausgeschlossen werden können. 5) Die Nachvollziehbarkeit gewährleistet die Integrität des Beweismittels.',
+      minKeywords: 5
     },
     {
       id: 24,
@@ -1351,14 +1356,15 @@ export const testData = {
     {
       id: 27,
       category: 'Kontextfrage',
-      question: 'Bei einer Kontrolle finden Sie ein Asservat ohne Kennzeichnung. Was ist die korrekte Vorgehensweise?',
-      options: [
-        'Asservat entsorgen',
-        'Beliebige Nummer vergeben',
-        'Vorfall dokumentieren, Recherche durchführen, ggf. nachkennzeichnen',
-        'Ignorieren'
+      type: 'context',
+      question: 'Welche Maßnahmen ergreifen Sie, wenn biologische Spuren (z.B. Blut) sichergestellt werden müssen?',
+      keywords: [
+        'handschuhe', 'kontamination', 'schutz', 'dna', 'trocknung',
+        'papiertüte', 'luftdurchlässig', 'feuchtigkeit', 'gekühlt',
+        'fotografieren', 'dokumentation', 'spurensicherung'
       ],
-      correctAnswer: 2
+      suggestedAnswer: 'Vorgehensweise bei biologischen Spuren: 1) Handschuhe tragen zum Kontaminationsschutz. 2) Fotografische Dokumentation vor der Sicherstellung. 3) Vorsichtige Aufnahme ohne Berührung der Spurenbereiche. 4) Trocknung feuchter Spuren bei Raumtemperatur. 5) Lagerung in luftdurchlässigen Papiertüten (nicht Plastik!). 6) Kühle Lagerung zur DNA-Erhaltung. 7) Schnellstmögliche Weitergabe ans Labor.',
+      minKeywords: 5
     },
     {
       id: 28,
@@ -1845,26 +1851,28 @@ export const testData = {
     {
       id: 25,
       category: 'Kontextfrage',
-      question: 'Ein Asservat soll zur DNA-Analyse ins Labor. Das Labor ist 200km entfernt. Wie organisieren Sie den Transport?',
-      options: [
-        'Mit der Post versenden',
-        'Kurierdienst mit Kühlkette und Dokumentation der Transportkette',
-        'Mit privatem PKW ohne Dokumentation',
-        'Per E-Mail das Foto schicken'
+      type: 'context',
+      question: 'Beschreiben Sie die wichtigsten Schritte bei der Vernichtung von Asservaten.',
+      keywords: [
+        'freigabe', 'staatsanwaltschaft', 'gericht', 'richter', 'genehmigung',
+        'dokumentation', 'protokoll', 'vernichtungsnachweis', 'fachbetrieb',
+        'datum', 'zeuge', 'umweltschutz', 'vorschrift'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Vernichtung von Asservaten: 1) Freigabe durch Staatsanwaltschaft oder Gericht einholen (niemals ohne!). 2) Dokumentation der Freigabe mit Aktenzeichen. 3) Vernichtungsprotokoll mit Datum, Asservatennummer und Beschreibung. 4) Bei Gefahrstoffen: Beauftragung zertifizierter Entsorgungsfachbetriebe. 5) Vier-Augen-Prinzip bei der Vernichtung. 6) Vernichtungsnachweis archivieren. 7) Austragung aus dem Asservatenverzeichnis.',
+      minKeywords: 5
     },
     {
       id: 26,
       category: 'Kontextfrage',
-      question: 'Sie stellen fest, dass die Asservatennummer doppelt vergeben wurde. Was tun Sie?',
-      options: [
-        'Nichts, ist nicht schlimm',
-        'Sofortige Korrektur, Neuvergabe einer Nummer und Dokumentation',
-        'Einfach eine 2 hinter die Nummer schreiben',
-        'Beide Asservate zusammenlegen'
+      type: 'context',
+      question: 'Welche besonderen Anforderungen gelten für die Lagerung und den Umgang mit digitalen Asservaten (z.B. Smartphones, Festplatten)?',
+      keywords: [
+        'forensisch', 'write-blocker', 'hash', 'hashwert', 'schreibschutz',
+        'ausgeschaltet', 'flugmodus', 'faraday', 'dokumentation',
+        'datenintegrität', 'kopie', 'image', 'fachpersonal'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Digitale Asservate erfordern besondere Behandlung: 1) Geräte im ausgeschalteten Zustand lassen bzw. in Flugmodus versetzen. 2) Bei Handys: Faraday-Beutel zur Unterbindung von Funkverbindungen. 3) Forensische Sicherung durch Fachpersonal mit Write-Blockern. 4) Erstellung von Hash-Werten zur Integritätssicherung. 5) Original und forensische Kopie getrennt lagern. 6) Besondere Dokumentation der Sicherungsmaßnahmen. 7) Kontrolle des Akkuzustands.',
+      minKeywords: 5
     },
     {
       id: 27,
@@ -2363,26 +2371,28 @@ export const testData = {
     {
       id: 25,
       category: 'Kontextfrage',
-      question: 'Bei einer Hausdurchsuchung werden 5kg Pulver sichergestellt. Verdacht auf Drogen. Wie verfahren Sie?',
-      options: [
-        'Normal im Regal lagern',
-        'Besonders gesichert nach BtMG, Probe ans Labor, Rest sicher verwahren',
-        'Direkt entsorgen',
-        'Probieren um was es ist'
+      type: 'context',
+      question: 'Erklären Sie die Bedeutung und Umsetzung des Vier-Augen-Prinzips in der Asservatenverwaltung.',
+      keywords: [
+        'vier-augen', 'kontrolle', 'zwei personen', 'anwesenheit', 'zeuge',
+        'manipulation', 'sicherheit', 'betäubungsmittel', 'bargeld',
+        'wertsachen', 'dokumentation', 'unterschrift', 'protokoll'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Das Vier-Augen-Prinzip: 1) Bei kritischen Vorgängen müssen immer zwei Personen anwesend sein. 2) Gilt besonders bei: Betäubungsmitteln, Bargeld, Wertsachen, Vernichtung. 3) Beide Personen dokumentieren und unterschreiben den Vorgang. 4) Verhindert Manipulation und Diebstahl. 5) Schafft gegenseitige Kontrolle. 6) Erhöht Rechtssicherheit durch Zeugen. 7) Beide tragen gemeinsame Verantwortung.',
+      minKeywords: 5
     },
     {
       id: 26,
       category: 'Kontextfrage',
-      question: 'Ein Kollege bittet Sie, ihm schnell ein Asservat zu zeigen, weil er neugierig ist. Was tun Sie?',
-      options: [
-        'Zeigen ohne Dokumentation',
-        'Ablehnen, nur mit dienstlicher Berechtigung und Dokumentation',
-        'Zeigen wenn niemand zusieht',
-        'Foto machen und verschicken'
+      type: 'context',
+      question: 'Was müssen Sie bei einem Notfall (z.B. Brand, Wassereinbruch) in der Asservatestelle beachten?',
+      keywords: [
+        'evakuierung', 'personensicherheit', 'alarm', 'feuerwehr', 'meldung',
+        'gefährliche', 'priorisierung', 'betäubungsmittel', 'wertsachen',
+        'dokumentation', 'protokoll', 'vorgesetzte', 'notfallplan'
       ],
-      correctAnswer: 1
+      suggestedAnswer: 'Notfallmaßnahmen: 1) Personensicherheit hat oberste Priorität - Evakuierung. 2) Alarmierung Feuerwehr/Rettungskräfte. 3) Falls gefahrlos möglich: Sicherung kritischer Asservate (Betäubungsmittel, gefährliche Stoffe, Wertsachen). 4) Dokumentation aller Maßnahmen und Ereignisse. 5) Sofortige Information der Vorgesetzten und Staatsanwaltschaft bei betroffenen Verfahren. 6) Nach Notfall: Bestandsaufnahme und Zustandsdokumentation. 7) Befolgung des Notfallplans.',
+      minKeywords: 5
     },
     {
       id: 27,
@@ -2590,3 +2600,47 @@ export const testData = {
     }
   ]
 };
+
+// Helper function to calculate score for context questions based on keywords
+export function calculateContextScore(userAnswer, keywords, minKeywords) {
+  if (!userAnswer || typeof userAnswer !== 'string') {
+    return 0;
+  }
+  
+  const normalizedAnswer = userAnswer.toLowerCase().trim();
+  if (normalizedAnswer.length < 10) {
+    return 0; // Answer too short
+  }
+  
+  const foundKeywords = keywords.filter(keyword => 
+    normalizedAnswer.includes(keyword.toLowerCase())
+  );
+  
+  const keywordScore = foundKeywords.length;
+  const minScore = minKeywords || Math.ceil(keywords.length * 0.4);
+  
+  // Score based on percentage of keywords found
+  if (keywordScore >= keywords.length * 0.8) {
+    return 1.0; // 100% - found 80%+ of keywords
+  } else if (keywordScore >= keywords.length * 0.6) {
+    return 0.8; // 80% - found 60%+ of keywords
+  } else if (keywordScore >= minScore) {
+    return 0.6; // 60% - found minimum required keywords
+  } else if (keywordScore > 0) {
+    return 0.3; // 30% - found some keywords but not enough
+  }
+  
+  return 0; // No keywords found
+}
+
+// Helper function to get found keywords for feedback
+export function getFoundKeywords(userAnswer, keywords) {
+  if (!userAnswer || typeof userAnswer !== 'string') {
+    return [];
+  }
+  
+  const normalizedAnswer = userAnswer.toLowerCase().trim();
+  return keywords.filter(keyword => 
+    normalizedAnswer.includes(keyword.toLowerCase())
+  );
+}
