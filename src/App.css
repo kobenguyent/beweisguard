@@ -601,4 +601,98 @@
     height: 30px;
     font-size: 0.85rem;
   }
+
+  .context-textarea {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* Context question styles */
+.context-answer {
+  margin-top: 20px;
+}
+
+.context-hint {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  color: #1976d2;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  border-left: 4px solid #1976d2;
+}
+
+.context-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.context-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.context-char-count {
+  text-align: right;
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.context-user-answer {
+  margin-bottom: 15px;
+}
+
+.context-text {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  line-height: 1.6;
+  color: #555;
+  border-left: 3px solid #667eea;
+}
+
+.context-feedback {
+  background: #e3f2fd;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  border-left: 3px solid #1976d2;
+}
+
+.context-feedback p {
+  color: #1976d2;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.context-suggested {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f0f4ff;
+  border-radius: 8px;
+  border-left: 4px solid #764ba2;
+}
+
+.context-suggested strong {
+  color: #667eea;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.review-icon {
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-width: 50px;
+  text-align: right;
 }

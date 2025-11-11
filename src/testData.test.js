@@ -23,8 +23,6 @@ describe('testData', () => {
             expect(question).toHaveProperty('id')
             expect(question).toHaveProperty('category')
             expect(question).toHaveProperty('question')
-            expect(question).toHaveProperty('options')
-            expect(question).toHaveProperty('correctAnswer')
             
             // ID should match index + 1
             expect(question.id).toBe(index + 1)
@@ -36,18 +34,34 @@ describe('testData', () => {
             // Category should not be empty
             expect(question.category).toBeTruthy()
             
-            // Should have exactly 4 options
-            expect(question.options).toHaveLength(4)
-            
-            // All options should be non-empty strings
-            question.options.forEach(option => {
-              expect(typeof option).toBe('string')
-              expect(option.length).toBeGreaterThan(0)
-            })
-            
-            // Correct answer should be between 0-3
-            expect(question.correctAnswer).toBeGreaterThanOrEqual(0)
-            expect(question.correctAnswer).toBeLessThanOrEqual(3)
+            // Different validation for context questions vs multiple choice
+            if (question.type === 'context') {
+              // Context questions should have keywords and suggestedAnswer
+              expect(question).toHaveProperty('keywords')
+              expect(question).toHaveProperty('suggestedAnswer')
+              expect(question).toHaveProperty('minKeywords')
+              expect(Array.isArray(question.keywords)).toBe(true)
+              expect(question.keywords.length).toBeGreaterThan(0)
+              expect(question.suggestedAnswer).toBeTruthy()
+              expect(question.suggestedAnswer.length).toBeGreaterThan(20)
+            } else {
+              // Multiple choice questions should have options and correctAnswer
+              expect(question).toHaveProperty('options')
+              expect(question).toHaveProperty('correctAnswer')
+              
+              // Should have exactly 4 options
+              expect(question.options).toHaveLength(4)
+              
+              // All options should be non-empty strings
+              question.options.forEach(option => {
+                expect(typeof option).toBe('string')
+                expect(option.length).toBeGreaterThan(0)
+              })
+              
+              // Correct answer should be between 0-3
+              expect(question.correctAnswer).toBeGreaterThanOrEqual(0)
+              expect(question.correctAnswer).toBeLessThanOrEqual(3)
+            }
           })
         })
 
@@ -191,7 +205,13 @@ describe('testData', () => {
         it('questions and options combined should be in German', () => {
           questions.forEach((question, index) => {
             // Check question + options together to allow for math questions with short answers
-            const fullText = (question.question + ' ' + question.options.join(' ')).toLowerCase()
+            // For context questions, check question + suggestedAnswer
+            let fullText
+            if (question.type === 'context') {
+              fullText = (question.question + ' ' + question.suggestedAnswer).toLowerCase()
+            } else {
+              fullText = (question.question + ' ' + question.options.join(' ')).toLowerCase()
+            }
             const hasGermanChars = hasGermanCharacteristics(fullText)
             
             expect(hasGermanChars).toBe(true)

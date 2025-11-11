@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { testData } from './testData'
+import { testData, calculateContextScore, getFoundKeywords } from './testData'
 import './App.css'
 
 function App() {
@@ -29,6 +29,12 @@ function App() {
     setUserAnswers(newAnswers)
   }
 
+  const handleTextAnswer = (text) => {
+    const newAnswers = [...userAnswers]
+    newAnswers[currentQuestionIndex] = text
+    setUserAnswers(newAnswers)
+  }
+
   const handleNext = () => {
     if (currentQuestionIndex < testData[selectedTest].length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
@@ -48,15 +54,31 @@ function App() {
   const calculateResults = () => {
     const questions = testData[selectedTest]
     let correct = 0
+    let totalScore = 0
     
     questions.forEach((question, index) => {
-      if (userAnswers[index] === question.correctAnswer) {
-        correct++
+      if (question.type === 'context') {
+        // For context questions, use keyword-based scoring
+        const score = calculateContextScore(
+          userAnswers[index],
+          question.keywords,
+          question.minKeywords
+        )
+        totalScore += score
+        if (score >= 0.6) {
+          correct++ // Count as correct if score is 60% or higher
+        }
+      } else {
+        // For multiple choice questions
+        if (userAnswers[index] === question.correctAnswer) {
+          correct++
+          totalScore += 1
+        }
       }
     })
 
-    const percentage = (correct / questions.length) * 100
-    return { correct, total: questions.length, percentage }
+    const percentage = (totalScore / questions.length) * 100
+    return { correct, total: questions.length, percentage, totalScore }
   }
 
   const resetTest = () => {
@@ -154,34 +176,79 @@ function App() {
           <div className="question-review">
             <h3>Fragen-Übersicht</h3>
             {testData[selectedTest].map((question, index) => {
-              const isCorrect = userAnswers[index] === question.correctAnswer
               const userAnswer = userAnswers[index]
+              let isCorrect, score, foundKeywords
+              
+              if (question.type === 'context') {
+                score = calculateContextScore(userAnswer, question.keywords, question.minKeywords)
+                isCorrect = score >= 0.6
+                foundKeywords = getFoundKeywords(userAnswer, question.keywords)
+              } else {
+                isCorrect = userAnswer === question.correctAnswer
+              }
               
               return (
                 <div key={question.id} className={`review-item ${isCorrect ? 'correct' : 'incorrect'}`}>
                   <div className="review-header">
                     <span className="review-number">Frage {index + 1}</span>
-                    <span className="review-icon">{isCorrect ? '✅' : '❌'}</span>
+                    <span className="review-icon">
+                      {question.type === 'context' ? 
+                        `${Math.round(score * 100)}%` : 
+                        (isCorrect ? '✅' : '❌')
+                      }
+                    </span>
                   </div>
                   {question.category && (
                     <span className="category-badge small">{question.category}</span>
                   )}
                   <p className="review-question">{question.question}</p>
                   <div className="review-answers">
-                    {userAnswer !== undefined && (
+                    {question.type === 'context' ? (
                       <>
-                        <p className="user-answer">
-                          <strong>Ihre Antwort:</strong> {question.options[userAnswer]}
-                        </p>
-                        {!isCorrect && (
-                          <p className="correct-answer">
-                            <strong>Richtige Antwort:</strong> {question.options[question.correctAnswer]}
-                          </p>
+                        {userAnswer ? (
+                          <>
+                            <div className="context-user-answer">
+                              <strong>Ihre Antwort:</strong>
+                              <p className="context-text">{userAnswer}</p>
+                            </div>
+                            <div className="context-feedback">
+                              <p>
+                                <strong>Gefundene Schlüsselbegriffe ({foundKeywords.length}/{question.keywords.length}):</strong>{' '}
+                                {foundKeywords.length > 0 ? foundKeywords.join(', ') : 'Keine'}
+                              </p>
+                            </div>
+                            <div className="context-suggested">
+                              <strong>Musterantwort:</strong>
+                              <p className="context-text">{question.suggestedAnswer}</p>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <p className="no-answer">Nicht beantwortet</p>
+                            <div className="context-suggested">
+                              <strong>Musterantwort:</strong>
+                              <p className="context-text">{question.suggestedAnswer}</p>
+                            </div>
+                          </>
                         )}
                       </>
-                    )}
-                    {userAnswer === undefined && (
-                      <p className="no-answer">Nicht beantwortet</p>
+                    ) : (
+                      <>
+                        {userAnswer !== undefined ? (
+                          <>
+                            <p className="user-answer">
+                              <strong>Ihre Antwort:</strong> {question.options[userAnswer]}
+                            </p>
+                            {!isCorrect && (
+                              <p className="correct-answer">
+                                <strong>Richtige Antwort:</strong> {question.options[question.correctAnswer]}
+                              </p>
+                            )}
+                          </>
+                        ) : (
+                          <p className="no-answer">Nicht beantwortet</p>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
@@ -227,18 +294,36 @@ function App() {
           )}
           <h2 className="question-text">{currentQuestion.question}</h2>
           
-          <div className="options">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                className={`option-button ${userAnswers[currentQuestionIndex] === index ? 'selected' : ''}`}
-                onClick={() => handleAnswerSelect(index)}
-              >
-                <span className="option-letter">{String.fromCharCode(65 + index)}</span>
-                <span className="option-text">{option}</span>
-              </button>
-            ))}
-          </div>
+          {currentQuestion.type === 'context' ? (
+            <div className="context-answer">
+              <p className="context-hint">
+                ✍️ Bitte beantworten Sie die Frage in eigenen Worten. Ihre Antwort wird anhand wichtiger Schlüsselbegriffe bewertet.
+              </p>
+              <textarea
+                className="context-textarea"
+                value={userAnswers[currentQuestionIndex] || ''}
+                onChange={(e) => handleTextAnswer(e.target.value)}
+                placeholder="Geben Sie hier Ihre Antwort ein..."
+                rows={8}
+              />
+              <p className="context-char-count">
+                {(userAnswers[currentQuestionIndex] || '').length} Zeichen
+              </p>
+            </div>
+          ) : (
+            <div className="options">
+              {currentQuestion.options.map((option, index) => (
+                <button
+                  key={index}
+                  className={`option-button ${userAnswers[currentQuestionIndex] === index ? 'selected' : ''}`}
+                  onClick={() => handleAnswerSelect(index)}
+                >
+                  <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+                  <span className="option-text">{option}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="navigation">
