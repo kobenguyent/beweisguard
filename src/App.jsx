@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { testData, calculateContextScore, getFoundKeywords } from './testData'
-import { saveSession, loadSession, clearSession } from './sessionManager'
+import { saveSession, loadSession, clearSession, saveTestResult } from './sessionManager'
+import TestReports from './TestReports'
 import './App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [userAnswers, setUserAnswers] = useState(session?.userAnswers || [])
   const [showResults, setShowResults] = useState(session?.showResults || false)
   const [testStarted, setTestStarted] = useState(session?.testStarted || false)
+  const [showReports, setShowReports] = useState(false)
 
   // Save session whenever state changes
   useEffect(() => {
@@ -65,6 +67,14 @@ function App() {
   }
 
   const handleSubmit = () => {
+    const results = calculateResults()
+    // Save test result to history
+    saveTestResult({
+      testName: selectedTest,
+      correct: results.correct,
+      total: results.total,
+      percentage: results.percentage
+    })
     setShowResults(true)
   }
 
@@ -114,6 +124,11 @@ function App() {
     setTestStarted(false)
   }
 
+  // Show Reports View
+  if (showReports) {
+    return <TestReports onBack={() => setShowReports(false)} />
+  }
+
   // Test Selection Screen
   if (!selectedTest) {
     return (
@@ -138,6 +153,12 @@ function App() {
               </button>
             ))}
           </div>
+          <button 
+            className="button button-secondary reports-button" 
+            onClick={() => setShowReports(true)}
+          >
+            📊 Testberichte anzeigen
+          </button>
         </div>
       </div>
     )
