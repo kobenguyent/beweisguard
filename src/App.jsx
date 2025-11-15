@@ -1,17 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { testData, calculateContextScore, getFoundKeywords } from './testData'
+import { saveSession, loadSession, clearSession } from './sessionManager'
 import './App.css'
 
 function App() {
-  const [selectedTest, setSelectedTest] = useState(null)
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [userAnswers, setUserAnswers] = useState([])
-  const [showResults, setShowResults] = useState(false)
-  const [testStarted, setTestStarted] = useState(false)
+  // Initialize state from session or defaults
+  const session = loadSession()
+  const [selectedTest, setSelectedTest] = useState(session?.selectedTest || null)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(session?.currentQuestionIndex || 0)
+  const [userAnswers, setUserAnswers] = useState(session?.userAnswers || [])
+  const [showResults, setShowResults] = useState(session?.showResults || false)
+  const [testStarted, setTestStarted] = useState(session?.testStarted || false)
+
+  // Save session whenever state changes
+  useEffect(() => {
+    if (selectedTest || testStarted || userAnswers.length > 0) {
+      saveSession({
+        selectedTest,
+        currentQuestionIndex,
+        userAnswers,
+        showResults,
+        testStarted
+      })
+    }
+  }, [selectedTest, currentQuestionIndex, userAnswers, showResults, testStarted])
 
   const availableTests = Object.keys(testData)
 
   const handleTestSelection = (testName) => {
+    clearSession()
     setSelectedTest(testName)
     setCurrentQuestionIndex(0)
     setUserAnswers([])
@@ -82,6 +99,7 @@ function App() {
   }
 
   const resetTest = () => {
+    clearSession()
     setSelectedTest(null)
     setCurrentQuestionIndex(0)
     setUserAnswers([])
