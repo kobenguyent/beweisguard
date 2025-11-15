@@ -1,5 +1,6 @@
 // Session manager for persisting test state to localStorage
 const SESSION_KEY = 'beweisguard-session'
+const HISTORY_KEY = 'beweisguard-test-history'
 
 export const saveSession = (sessionData) => {
   try {
@@ -24,5 +25,38 @@ export const clearSession = () => {
     localStorage.removeItem(SESSION_KEY)
   } catch (error) {
     console.error('Failed to clear session:', error)
+  }
+}
+
+// Test history management
+export const saveTestResult = (testResult) => {
+  try {
+    const history = loadTestHistory()
+    history.push({
+      ...testResult,
+      id: Date.now(),
+      timestamp: new Date().toISOString()
+    })
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history))
+  } catch (error) {
+    console.error('Failed to save test result:', error)
+  }
+}
+
+export const loadTestHistory = () => {
+  try {
+    const data = localStorage.getItem(HISTORY_KEY)
+    return data ? JSON.parse(data) : []
+  } catch (error) {
+    console.error('Failed to load test history:', error)
+    return []
+  }
+}
+
+export const clearTestHistory = () => {
+  try {
+    localStorage.removeItem(HISTORY_KEY)
+  } catch (error) {
+    console.error('Failed to clear test history:', error)
   }
 }
