@@ -250,7 +250,8 @@ export const testData = {
         '96 Gegenstände',
         '180 Gegenstände'
       ],
-      correctAnswer: 1
+      correctAnswer: 1,
+      tip: 'Berechnung: 15% + 25% = 40% sind Betäubungsmittel und Waffen. Der Rest = 100% - 40% = 60% sind sonstige Gegenstände. 60% von 240 = 0,60 × 240 = 144 Gegenstände.'
     },
     {
       id: 22,
@@ -262,7 +263,8 @@ export const testData = {
         '365 Asservate',
         '410 Asservate'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Anfangsbestand + Neuzugänge - Rückgaben = Endbestand. 320 + 180 - 45 = 455 Asservate.'
     },
     {
       id: 23,
@@ -360,7 +362,8 @@ export const testData = {
         '18 Monate',
         '30 Monate'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Durchschnittliche Lagerdauer - Bereits vergangene Zeit = Verbleibende Zeit. 18 Monate - 12 Monate = 6 Monate.'
     },
     {
       id: 31,
@@ -770,7 +773,8 @@ export const testData = {
         '65%',
         '58%'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Freie Kapazität = 120kg - 78kg = 42kg. Prozentual: (42 / 120) × 100 = 35%.'
     },
     {
       id: 22,
@@ -819,7 +823,8 @@ export const testData = {
         '130',
         '140'
       ],
-      correctAnswer: 1
+      correctAnswer: 1,
+      tip: 'Berechnung: Gesamt - Monat 1 - Monat 2 = Monat 3. 450 - 180 - 150 = 120 Asservate.'
     },
     {
       id: 26,
@@ -1290,7 +1295,8 @@ export const testData = {
         '180 Asservate',
         '165 Asservate'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: 20% + 15% = 35% wurden entfernt. Verbleiben: 100% - 35% = 65%. 65% von 300 = 0,65 × 300 = 195 Asservate.'
     },
     {
       id: 22,
@@ -1339,7 +1345,8 @@ export const testData = {
         '30€',
         '35€'
       ],
-      correctAnswer: 1
+      correctAnswer: 1,
+      tip: 'Berechnung: Gesamtkosten / Anzahl Asservate = Kosten pro Asservat. 45.000€ / 1.800 = 25€.'
     },
     {
       id: 26,
@@ -1810,7 +1817,8 @@ export const testData = {
         '50%',
         '75%'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Gesamtfächer = 5 × 12 = 60. Freie Fächer = 60 - 45 = 15. Prozent frei = (15 / 60) × 100 = 25%.'
     },
     {
       id: 22,
@@ -1822,7 +1830,8 @@ export const testData = {
         '2.587,50€',
         '2.557,50€'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Scheine + Münzen = Gesamtbetrag. 2.450€ + 127,50€ = 2.577,50€.'
     },
     {
       id: 23,
@@ -1920,7 +1929,8 @@ export const testData = {
         '60%',
         '70%'
       ],
-      correctAnswer: 2
+      correctAnswer: 2,
+      tip: 'Berechnung: Verbleibende Asservate = 400 - 160 = 240. Prozent = (240 / 400) × 100 = 60%.'
     },
     {
       id: 31,
@@ -2330,7 +2340,8 @@ export const testData = {
         '321 Asservate',
         '339 Asservate'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Anfang + Neuzugänge - Herausgaben - Vernichtungen = Ende. 315 + 42 - 18 - 9 = 330 Asservate.'
     },
     {
       id: 22,
@@ -2342,7 +2353,8 @@ export const testData = {
         '15kg',
         '20kg'
       ],
-      correctAnswer: 0
+      correctAnswer: 0,
+      tip: 'Berechnung: Aktuelles Gewicht = 23 + 17 + 31 + 9 = 80kg. Freie Kapazität = 85 - 80 = 5kg.'
     },
     {
       id: 23,
@@ -2440,7 +2452,8 @@ export const testData = {
         '7.000€',
         '8.400€'
       ],
-      correctAnswer: 3
+      correctAnswer: 3,
+      tip: 'Berechnung: Kosten pro Asservat × Anzahl Asservate × Anzahl Jahre = Gesamtkosten. 15€ × 280 × 2 = 8.400€.'
     },
     {
       id: 31,
