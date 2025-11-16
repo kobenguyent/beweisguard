@@ -15,6 +15,7 @@ function App() {
   const [testStarted, setTestStarted] = useState(session?.testStarted || false)
   const [showReports, setShowReports] = useState(false)
   const [showCalculator, setShowCalculator] = useState(false)
+  const [showTip, setShowTip] = useState(false)
 
   // Save session whenever state changes
   useEffect(() => {
@@ -59,12 +60,14 @@ function App() {
   const handleNext = () => {
     if (currentQuestionIndex < testData[selectedTest].length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
+      setShowTip(false)
     }
   }
 
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1)
+      setShowTip(false)
     }
   }
 
@@ -367,9 +370,20 @@ function App() {
           )}
 
           {currentQuestion.tip && (
-            <div className="question-tip">
-              <div className="tip-header">💡 Tipp</div>
-              <p className="tip-text">{currentQuestion.tip}</p>
+            <div className="tip-section">
+              <button 
+                className="tip-toggle-button"
+                onClick={() => setShowTip(!showTip)}
+                aria-label={showTip ? "Tipp ausblenden" : "Tipp anzeigen"}
+              >
+                💡 {showTip ? 'Tipp ausblenden' : 'Tipp anzeigen'}
+              </button>
+              {showTip && (
+                <div className="question-tip">
+                  <div className="tip-header">💡 Tipp</div>
+                  <p className="tip-text">{currentQuestion.tip}</p>
+                </div>
+              )}
             </div>
           )}
         </div>

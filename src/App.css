@@ -606,6 +606,11 @@
     font-size: 0.9rem;
     padding: 12px;
   }
+
+  .tip-toggle-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
 
 /* Context question styles */
@@ -708,12 +713,56 @@
 }
 
 /* Question Tip */
+.tip-section {
+  margin-top: 20px;
+}
+
+.tip-toggle-button {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  color: #2d3436;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(253, 203, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.tip-toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(253, 203, 110, 0.5);
+}
+
+.tip-toggle-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(253, 203, 110, 0.3);
+}
+
 .question-tip {
   background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
   border-radius: 10px;
   padding: 15px 20px;
-  margin-top: 20px;
   box-shadow: 0 4px 10px rgba(253, 203, 110, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tip-header {
