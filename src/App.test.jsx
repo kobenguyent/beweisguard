@@ -241,4 +241,108 @@ describe('App Component', () => {
       expect(session.userAnswers[0]).toBe(0)
     })
   })
+
+  describe('Tip Toggle Functionality', () => {
+    it('should hide tip by default when question has a tip', () => {
+      // Set up session to start at question 21 which has a tip
+      localStorage.setItem('beweisguard-session', JSON.stringify({
+        selectedTest: 'Test A',
+        currentQuestionIndex: 20,
+        userAnswers: [],
+        showResults: false,
+        testStarted: true
+      }))
+      
+      render(<App />)
+      
+      // Should show "Tipp anzeigen" button
+      expect(screen.getByRole('button', { name: /Tipp anzeigen/ })).toBeInTheDocument()
+      
+      // Tip content should not be visible initially
+      expect(screen.queryByText(/Berechnung:/)).not.toBeInTheDocument()
+    })
+
+    it('should show tip when toggle button is clicked', () => {
+      // Set up session to start at question 21 which has a tip
+      localStorage.setItem('beweisguard-session', JSON.stringify({
+        selectedTest: 'Test A',
+        currentQuestionIndex: 20,
+        userAnswers: [],
+        showResults: false,
+        testStarted: true
+      }))
+      
+      render(<App />)
+      
+      // Click the "Tipp anzeigen" button
+      const toggleButton = screen.getByRole('button', { name: /Tipp anzeigen/ })
+      fireEvent.click(toggleButton)
+      
+      // Button text should change to "Tipp ausblenden"
+      expect(screen.getByRole('button', { name: /Tipp ausblenden/ })).toBeInTheDocument()
+      
+      // Tip content should now be visible
+      expect(screen.getByText(/Berechnung:/)).toBeInTheDocument()
+    })
+
+    it('should hide tip when toggle button is clicked again', () => {
+      // Set up session to start at question 21 which has a tip
+      localStorage.setItem('beweisguard-session', JSON.stringify({
+        selectedTest: 'Test A',
+        currentQuestionIndex: 20,
+        userAnswers: [],
+        showResults: false,
+        testStarted: true
+      }))
+      
+      render(<App />)
+      
+      // Click to show tip
+      const toggleButton = screen.getByRole('button', { name: /Tipp anzeigen/ })
+      fireEvent.click(toggleButton)
+      
+      // Verify tip is shown
+      expect(screen.getByText(/Berechnung:/)).toBeInTheDocument()
+      
+      // Click again to hide tip
+      const hideButton = screen.getByRole('button', { name: /Tipp ausblenden/ })
+      fireEvent.click(hideButton)
+      
+      // Button text should change back to "Tipp anzeigen"
+      expect(screen.getByRole('button', { name: /Tipp anzeigen/ })).toBeInTheDocument()
+      
+      // Tip content should be hidden
+      expect(screen.queryByText(/Berechnung:/)).not.toBeInTheDocument()
+    })
+
+    it('should hide tip when navigating to next question', () => {
+      // Set up session to start at question 21 which has a tip
+      localStorage.setItem('beweisguard-session', JSON.stringify({
+        selectedTest: 'Test A',
+        currentQuestionIndex: 20,
+        userAnswers: [],
+        showResults: false,
+        testStarted: true
+      }))
+      
+      render(<App />)
+      
+      // Show the tip
+      const toggleButton = screen.getByRole('button', { name: /Tipp anzeigen/ })
+      fireEvent.click(toggleButton)
+      
+      // Verify tip is shown
+      expect(screen.getByText(/Berechnung:/)).toBeInTheDocument()
+      
+      // Navigate to next question
+      const nextButton = screen.getByRole('button', { name: /Weiter/ })
+      fireEvent.click(nextButton)
+      
+      // Should be on question 22 now
+      expect(screen.getByText(/Frage 22 von 43/)).toBeInTheDocument()
+      
+      // Tip should be hidden (button should say "Tipp anzeigen")
+      expect(screen.getByRole('button', { name: /Tipp anzeigen/ })).toBeInTheDocument()
+    })
+  })
 })
