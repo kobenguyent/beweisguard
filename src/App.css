@@ -706,3 +706,56 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Question Tip */
+.question-tip {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(253, 203, 110, 0.3);
+}
+
+.tip-header {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #d63031;
+  margin-bottom: 8px;
+}
+
+.tip-text {
+  color: #2d3436;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Calculator Toggle Button */
+.calculator-toggle-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.calculator-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.calculator-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { testData, calculateContextScore, getFoundKeywords } from './testData'
 import { saveSession, loadSession, clearSession, saveTestResult } from './sessionManager'
 import TestReports from './TestReports'
+import Calculator from './Calculator'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [showResults, setShowResults] = useState(session?.showResults || false)
   const [testStarted, setTestStarted] = useState(session?.testStarted || false)
   const [showReports, setShowReports] = useState(false)
+  const [showCalculator, setShowCalculator] = useState(false)
 
   // Save session whenever state changes
   useEffect(() => {
@@ -363,7 +365,23 @@ function App() {
               ))}
             </div>
           )}
+
+          {currentQuestion.tip && (
+            <div className="question-tip">
+              <div className="tip-header">💡 Tipp</div>
+              <p className="tip-text">{currentQuestion.tip}</p>
+            </div>
+          )}
         </div>
+
+        {currentQuestion.category === 'Mathematik' && (
+          <button 
+            className="calculator-toggle-btn"
+            onClick={() => setShowCalculator(true)}
+          >
+            🔢 Taschenrechner öffnen
+          </button>
+        )}
 
         <div className="navigation">
           <button
@@ -403,6 +421,11 @@ function App() {
           ))}
         </div>
       </div>
+
+      <Calculator 
+        isOpen={showCalculator}
+        onClose={() => setShowCalculator(false)}
+      />
     </div>
   )
 }
