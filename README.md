@@ -98,6 +98,18 @@ Jeder Test enthält:
 - **Qualitätskontrolle**: Überprüfung und Qualitätssicherung
 - Und weitere...
 
+## Automatische Fortschrittsspeicherung
+
+Die Anwendung speichert automatisch den Testfortschritt im Browser (localStorage):
+
+- ✅ **Automatische Speicherung**: Jede Antwort wird sofort gespeichert
+- 🔄 **Wiederherstellung nach Aktualisierung**: Bei versehentlichem Neuladen der Seite wird der Test an der gleichen Stelle fortgesetzt
+- 📍 **Aktuelle Frage**: Die Position im Test wird gespeichert
+- 📝 **Alle Antworten**: Sowohl Multiple-Choice- als auch Freitextantworten bleiben erhalten
+- 🆕 **Sauberer Start**: Beim Auswählen eines neuen Tests wird die vorherige Sitzung automatisch gelöscht
+
+**Hinweis**: Die Daten werden nur lokal im Browser gespeichert und nicht an einen Server übertragen.
+
 ## Tests ausführen
 
 ```bash
